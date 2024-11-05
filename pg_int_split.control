@@ -1,0 +1,4 @@
+comment = 'Window function to subdivide integer sums into weighted integer portions'
+default_version = '1.0'
+module_pathname = '$libdir/pg_int_split'
+trusted = true
