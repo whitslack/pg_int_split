@@ -59,7 +59,7 @@ static inline div64_t muldiv64(int64_t multiplicand, int64_t multiplier, int64_t
 	\
 	static int _pure int_split_row_##w##_compare_rem(const void *p0, const void *p1) { \
 		const struct int_split_row_##w *const r0 = p0, *const r1 = p1; \
-		return r1->div.rem - r0->div.rem; \
+		return (r0->div.rem > r1->div.rem) - (r0->div.rem < r1->div.rem); \
 	} \
 	\
 	PG_FUNCTION_INFO_V1(window_int_split_##w); \
