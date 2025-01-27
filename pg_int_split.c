@@ -88,7 +88,7 @@ static inline div64_t muldiv64(int64_t multiplicand, int64_t multiplier, int64_t
 					if (isnull) \
 						row->div.rem = INT##w##_MIN; \
 					else if (__builtin_add_overflow(denom, row->div.rem = DatumGetInt##w(datum), &denom)) \
-						ereport(ERROR, errcode(ERRCODE_INTERVAL_FIELD_OVERFLOW), \
+						ereport(ERROR, errcode(ERRCODE_NUMERIC_VALUE_OUT_OF_RANGE), \
 								errmsg("sum of split weights overflowed integer width")); \
 				} \
 				row->pos = pos; \
